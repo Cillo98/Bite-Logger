@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Bite Logger</string>
+    <string name="title_logs">Logs</string>
+    <string name="title_recipes">Recipes</string>
+    <string name="title_lists">Lists</string>
+    <string name="title_diets">Diets</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="label_login_details">Enter your account details:</string>
+    <string name="hint_email">john.smith@matrix.com</string>
+    <string name="hint_password">********</string>
+    <string name="button_login">Login</string>
+    <string name="button_register">Register new user</string>
+    <string name="error_empty_fields">Please enter both username and password</string>
+</resources>
