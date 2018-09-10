@@ -7,6 +7,8 @@ import android.graphics.Bitmap
  * A meal must have at least a date and the type
  * (breakfast, lunch, dinner, snack). The liking
  * of a meal is expressed with a score from 1 to 5.
+ * [Meal]s are connected to a number of [Food]s through
+ * the [Dish] class.
  *
  * @param id the ID of the meal
  * @param type which meal it is
