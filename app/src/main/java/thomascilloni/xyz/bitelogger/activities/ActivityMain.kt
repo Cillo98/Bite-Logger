@@ -12,6 +12,33 @@ import thomascilloni.xyz.bitelogger.util.Constants
 
 class ActivityMain : AppCompatActivity() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        checkLogin()
+
+        // TODO: implement switching fragments
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+    }
+
+    /**
+     * Check if the user has logged in.
+     * The check is done in the sharedPreferences. If the user hasn't logged in yet,
+     * the login activity will be launched. If the user has logged in, the login will be checked
+     * against Firebase.
+     */
+    private fun checkLogin() {
+        val prefs = applicationContext.getSharedPreferences(Constants.PREFS_NAME, 0) // 0 gives private mode
+
+        // check the shared preferences. Default value for login is false (in case it does not exist)
+        if (!prefs.getBoolean(Constants.PREFS_LOGGED_IN, false))
+            startActivity(Intent(this@ActivityMain, ActivityLogin::class.java))
+        else
+            Toast.makeText(this, "Logged in", Toast.LENGTH_SHORT).show()
+
+    }
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navLogs -> {
@@ -32,33 +59,5 @@ class ActivityMain : AppCompatActivity() {
             }
         }
         false
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        checkLogin()
-
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-    }
-
-    /**
-     * Check if the user has logged in.
-     * The check is done in the sharedPreferences. If the user hasn't logged in yet,
-     * the login activity will be launched. If the user has logged in, the login will be checked
-     * against Firebase.
-     */
-    private fun checkLogin() {
-
-        // 0 gives private mode
-        val prefs = applicationContext.getSharedPreferences(Constants.PREFS_NAME, 0)
-
-        // check the shared preferences. Default value for login is false (in case it does not exist)
-        if (!prefs.getBoolean(Constants.PREFS_LOGGED_IN, false))
-            startActivity(Intent(this@ActivityMain, ActivityLogin::class.java))
-        else
-            Toast.makeText(this, "Logged in", Toast.LENGTH_SHORT).show()
-
     }
 }

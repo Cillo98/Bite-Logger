@@ -21,6 +21,11 @@ class FragmentDiets : Fragment() {
         return inflater.inflate(R.layout.fragment_diets, container, false)
     }
 
+    override fun onStart() {
+        super.onStart()
+        // TODO: do stuff
+    }
+
     companion object {
         /**
          * Factory method to create a new instance of
