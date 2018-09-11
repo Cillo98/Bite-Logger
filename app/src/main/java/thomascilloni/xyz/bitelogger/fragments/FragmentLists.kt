@@ -1,4 +1,4 @@
-package thomascilloni.xyz.bitelogger.Fragments
+package thomascilloni.xyz.bitelogger.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

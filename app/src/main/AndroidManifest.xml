@@ -14,7 +14,7 @@
 
 
         <activity
-            android:name=".Activities.ActivityMain"
+            android:name=".activities.ActivityMain"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,11 +25,7 @@
 
 
         <activity
-            android:name=".Activities.ActivityLogin">
-        </activity>
-
-        <activity
-            android:name=".Activities.ActivityRegister">
+            android:name=".activities.ActivityLogin">
         </activity>
 
 

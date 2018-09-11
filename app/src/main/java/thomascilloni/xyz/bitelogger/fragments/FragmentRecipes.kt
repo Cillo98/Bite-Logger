@@ -1,4 +1,4 @@
-package thomascilloni.xyz.bitelogger.Fragments
+package thomascilloni.xyz.bitelogger.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -9,26 +9,26 @@ import android.view.ViewGroup
 import thomascilloni.xyz.bitelogger.R
 
 /**
- * A simple [Fragment] subclass to display food logs.
- * Use the [FragmentLogs.newInstance] factory method to
+ * A simple [Fragment] subclass to display recipes.
+ * Use the [FragmentRecipes.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class FragmentLogs : Fragment() {
+class FragmentRecipes : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_logs, container, false)
+        return inflater.inflate(R.layout.fragment_recipes, container, false)
     }
 
     companion object {
         /**
          * Factory method to create a new instance of
-         * this log fragment. Can add parameters.
+         * this recipes fragment. Can add parameters.
          *
          * @param param A [String] with data to process
-         * @return A new instance of fragment [FragmentLogs].
+         * @return A new instance of fragment [FragmentRecipes].
          */
-        fun newInstance(param: String?) = FragmentLogs()
+        fun newInstance(param: String?) = FragmentRecipes()
     }
 }

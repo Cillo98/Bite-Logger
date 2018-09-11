@@ -1,4 +1,4 @@
-package thomascilloni.xyz.bitelogger.Model
+package thomascilloni.xyz.bitelogger.model
 
 import android.graphics.Bitmap
 

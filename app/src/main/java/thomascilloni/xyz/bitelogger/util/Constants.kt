@@ -1,4 +1,4 @@
-package thomascilloni.xyz.bitelogger.Util
+package thomascilloni.xyz.bitelogger.util
 
 class Constants {
     companion object {

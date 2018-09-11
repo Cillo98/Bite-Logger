@@ -13,4 +13,7 @@
     <string name="button_login">Login</string>
     <string name="button_register">Register new user</string>
     <string name="error_empty_fields">Please enter both username and password</string>
+    <string name="btnSignIn">Sign in</string>
+    <string name="btnSignUp">Sign up</string>
+    <string name="error_pssw_mismatch">Passwords do not match</string>
 </resources>

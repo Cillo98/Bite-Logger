@@ -1,4 +1,4 @@
-package thomascilloni.xyz.bitelogger.Activities
+package thomascilloni.xyz.bitelogger.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import thomascilloni.xyz.bitelogger.R
-import thomascilloni.xyz.bitelogger.Util.Constants
+import thomascilloni.xyz.bitelogger.util.Constants
 
 
 class ActivityMain : AppCompatActivity() {
