@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import thomascilloni.xyz.bitelogger.R
 import thomascilloni.xyz.bitelogger.util.Constants
@@ -56,6 +57,8 @@ class ActivityMain : AppCompatActivity() {
         // check the shared preferences. Default value for login is false (in case it does not exist)
         if (!prefs.getBoolean(Constants.PREFS_LOGGED_IN, false))
             startActivity(Intent(this@ActivityMain, ActivityLogin::class.java))
+        else
+            Toast.makeText(this, "Logged in", Toast.LENGTH_SHORT).show()
 
     }
 }

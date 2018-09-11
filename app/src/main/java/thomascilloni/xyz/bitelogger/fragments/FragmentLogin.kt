@@ -54,9 +54,9 @@ class FragmentLogin: Fragment() {
                                     activity?.finish()
 
                                 } else
-                                    Toast.makeText(ctx, "ERROR: Not signed in", Toast.LENGTH_LONG).show()
+                                    Toast.makeText(ctx, "ERROR: There was a problem signing in", Toast.LENGTH_SHORT).show()
                             } else
-                                Toast.makeText(ctx, "ERROR: User/Pssw not right", Toast.LENGTH_LONG).show()
+                                lblErrorMessage.text = getString(R.string.error_wrong_password)
                         }
             } else {
                 lblErrorMessage.text = getString(R.string.error_empty_fields)

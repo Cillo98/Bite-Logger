@@ -61,7 +61,7 @@ class FragmentRegister: Fragment() {
                                         activity?.finish()
 
                                     } else
-                                        Toast.makeText(ctx, "ERROR: Login failed", Toast.LENGTH_LONG).show()
+                                        Toast.makeText(ctx, "ERROR: There was a problem signing in", Toast.LENGTH_LONG).show()
                                 } else
                                     Toast.makeText(ctx, "ERROR: Registration unsuccessful", Toast.LENGTH_LONG).show()
                             }
