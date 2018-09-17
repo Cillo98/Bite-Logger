@@ -18,8 +18,14 @@ class ActivityMain : AppCompatActivity() {
 
         checkLogin()
 
+        testPie()
+
         // TODO: implement switching fragments
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+    }
+
+    private fun testPie() {
+        nutritionChartID.setData(floatArrayOf(40f, 30f, 10f))
     }
 
     /**
@@ -42,19 +48,15 @@ class ActivityMain : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navLogs -> {
-                message.setText(R.string.title_logs)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navRecipes -> {
-                message.setText(R.string.title_recipes)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navLists -> {
-                message.setText(R.string.title_lists)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navDiets -> {
-                message.setText(R.string.title_diets)
                 return@OnNavigationItemSelectedListener true
             }
         }
