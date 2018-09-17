@@ -33,11 +33,16 @@ data class Food (
         val author_name: String?,
         val brand: String?,
         val cooked: Boolean?,
-        val calories: Long,
-        val carbohydrates: Long,
-        val proteins: Long,
-        val fats: Long,
+        val calories: Float,
+        val carbohydrates: Float,
+        val proteins: Float,
+        val fats: Float,
         val contains: String?,
         val instructions: String?,
         val picture: Bitmap?
-)
+) {
+
+    fun getNutrientsArray(): FloatArray {
+        return floatArrayOf(carbohydrates, proteins, fats)
+    }
+}
