@@ -57,7 +57,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        android:text="Fats: 0"
+        android:text="Fats: 0gr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lblName"
         app:layout_constraintTop_toBottomOf="@+id/lblProteins" />
