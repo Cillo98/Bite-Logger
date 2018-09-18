@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import thomascilloni.xyz.bitelogger.R
+import thomascilloni.xyz.bitelogger.fragments.FragmentLists
 import thomascilloni.xyz.bitelogger.util.Constants
 
 
@@ -18,14 +19,10 @@ class ActivityMain : AppCompatActivity() {
 
         checkLogin()
 
-        testPie()
-
         // TODO: implement switching fragments
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-    }
 
-    private fun testPie() {
-        nutritionChartID.setData(floatArrayOf(40f, 30f, 10f))
+
     }
 
     /**
@@ -54,6 +51,8 @@ class ActivityMain : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navLists -> {
+                supportFragmentManager.beginTransaction()
+                        .add(R.id.listFrame, FragmentLists()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navDiets -> {

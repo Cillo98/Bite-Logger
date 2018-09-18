@@ -7,12 +7,22 @@ package thomascilloni.xyz.bitelogger.model
  * many-to-many relationship. Dishes connect a [Food] with
  * a [Meal] and must have a specified quantity.
  *
- * @param food_id the [Food] to connect to
- * @param meal_id the [Meal] to connect to
+ * @param name the name of the food
+ * @param macros a list of macros per 100gr of the food
  * @param quantity the quantity of the food in grams
  */
 data class Dish (
-        val food_id: Int,
-        val meal_id: Int,
+        val name: String,
+        val macros: FloatArray,
         val quantity: Int
-)
+) {
+
+    constructor(food: Food, qnt: Int) :
+            this (  food.name,
+                    floatArrayOf(
+                            food.carbohydrates,
+                            food.proteins,
+                            food.fats),
+                    qnt
+            )
+}

@@ -13,12 +13,10 @@ import android.graphics.Bitmap
  * from the single ingredients
  *
  *
- * @param id ID of the food in the database
  * @param name name of the food (including flavours and customizations)
  * @param author_name the creator of the entry
  * @param brand brand of the food (sub-brands must be included)
  * @param cooked true if the food is cooked / ready, false if it needs processing / is raw
- * @param calories for every 100gr of product
  * @param carbohydrates for every 100gr of product
  * @param proteins for every 100gr of product
  * @param fats for every 100gr of product
@@ -28,12 +26,10 @@ import android.graphics.Bitmap
  *
  */
 data class Food (
-        val id: Int?,
         val name: String,
         val author_name: String?,
         val brand: String?,
         val cooked: Boolean?,
-        val calories: Float,
         val carbohydrates: Float,
         val proteins: Float,
         val fats: Float,

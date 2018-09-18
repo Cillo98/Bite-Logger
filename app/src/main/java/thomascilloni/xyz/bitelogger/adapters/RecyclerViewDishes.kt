@@ -8,39 +8,35 @@ import android.view.ViewGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.recyclerview_row_dish.view.*
 import thomascilloni.xyz.bitelogger.R
+import thomascilloni.xyz.bitelogger.model.Dish
 import thomascilloni.xyz.bitelogger.model.Food
 
 //@Suppress("UNCHECKED_CAST")
-class recyclerViewDishes(var context: Context, var dataset: Map<Food, Int>)
-    :RecyclerView.Adapter<recyclerViewDishes.ViewHolder>() {
-
-    val foods = dataset.keys as List<Food>
-    val quanitities = dataset.values as List<Int>
+class RecyclerViewDishes(var context: Context, var dataset: List<Dish>)
+    :RecyclerView.Adapter<RecyclerViewDishes.ViewHolder>() {
 
     lateinit var inflater: LayoutInflater
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): recyclerViewDishes.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewDishes.ViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.recyclerview_row_dish, parent, false)
         return ViewHolder(view, context)
     }
 
-    override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getItemCount() = dataset.size
 
-    override fun onBindViewHolder(holder: recyclerViewDishes.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerViewDishes.ViewHolder, position: Int) {
         // get the item to display
-        val food = foods[position]
-        val qnt = quanitities[position]
-        val macros = food.getNutrientsArray()
+        val dish = dataset[position]
+        val qnt = dish.quantity
+        val macros = dish.macros
 
         // update the fields in the view (row by row) with the actual data
-        holder.lblName.text = food.name
-        holder.lblQuantity.text = qnt.toString()
-        holder.lblCarbohydrates.text = (macros[0] * qnt/100).toInt().toString()
-        holder.lblProteins.text = (macros[1] * qnt/100).toInt().toString()
-        holder.lblFats.text = (macros[2] * qnt/100).toInt().toString()
+        holder.lblName.text = dish.name
+        holder.lblQuantity.text = qnt.toString()+" gr"
+        holder.lblCarbohydrates.text = "Carbs: "+(macros[0] * qnt/100).toInt().toString()
+        holder.lblProteins.text = "Proteins: "+(macros[1] * qnt/100).toInt().toString()
+        holder.lblFats.text = "Fats: "+(macros[2] * qnt/100).toInt().toString()
 
         holder.chart.setData(macros)
     }
@@ -72,7 +68,7 @@ class recyclerViewDishes(var context: Context, var dataset: Map<Food, Int>)
                 // cases for ID, that is buttons or graphs clicked
             }
 
-            Toast.makeText(context, "You have clicked ${foods[position].name}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "You have clicked ${dataset[position].name}", Toast.LENGTH_SHORT).show()
         }
 
     }
